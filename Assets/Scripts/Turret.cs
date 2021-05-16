@@ -9,6 +9,8 @@ public class Turret : MonoBehaviour
 	public string enemyTag = "Enemy";
     public Transform rotationPivot;
     public float turnSpeed = 8;
+    public float fireRate = 1f;
+    private float fireCountdown = 0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -51,6 +53,18 @@ public class Turret : MonoBehaviour
         Quaternion lookRotation = Quaternion.LookRotation(dir);
         Vector3 rotation = Quaternion.Lerp(rotationPivot.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
         rotationPivot.rotation = Quaternion.Euler(0f, rotation.y, 0f);
+
+        if(fireCountdown <= 0f)
+        {
+            Shoot();
+            fireCountdown = 1f / fireRate;
+        }
+        fireCountdown -= Time.deltaTime;
+    }
+
+    void Shoot()
+    {
+        Debug.Log("Shoot!");
     }
 
     void OnDrawGizmosSelected()
