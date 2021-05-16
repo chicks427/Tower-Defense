@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour
 	private Transform target;
 
 	public float speed = 30;
+	public GameObject bulletImpactEffect;
 
     // Start is called before the first frame update
     public void Seek(Transform _target)
@@ -36,6 +37,10 @@ public class Bullet : MonoBehaviour
 
     void HitTarget()
     {
-    	Debug.Log("Hit");
+    	GameObject effectIns = (GameObject)Instantiate(bulletImpactEffect, transform.position, transform.rotation);
+    	Destroy(effectIns, 2f);
+
+    	Destroy(gameObject);
+    	Destroy(target.gameObject);
     }
 }
