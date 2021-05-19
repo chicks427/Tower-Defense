@@ -4,13 +4,28 @@ using UnityEngine;
 public class Node : MonoBehaviour
 {
 	public Color hoverColor;
+	public Vector3 positionOffset;
 	private Color startColor;
 	private Renderer rend;
+	private GameObject turret;
 
 	void Start()
 	{
 		rend = GetComponent<Renderer>();
 		startColor = rend.material.color;
+	}
+
+	void OnMouseDown()
+	{
+		if (turret!=null)
+		{
+			Debug.Log("Can't build there!");
+		}
+		else
+		{
+			GameObject turretToBuild = BuildManager.instance.GetTurretToBuild();
+			turret = (GameObject)Instantiate(turretToBuild, transform.position + positionOffset, transform.rotation);
+		}
 	}
 
 	void OnMouseEnter()
