@@ -4,6 +4,9 @@ public class CameraController : MonoBehaviour
 {
 	public float panSpeed = 10f;
 	public float panBorderThickness = 10f;
+	public float scrollSpeed = 5;
+	public float minY = 3f;
+	public float maxY = 20f;
 	private bool moveable = false;
 
 	void Update()
@@ -29,5 +32,11 @@ public class CameraController : MonoBehaviour
 		{
 			transform.Translate(Vector3.left * panSpeed * Time.deltaTime, Space.World);
 		}
+
+		float scroll = Input.GetAxis("Mouse ScrollWheel");
+		Vector3 pos = transform.position;
+		pos.y -= scroll * 1000 * scrollSpeed * Time.deltaTime;
+		pos.y = Mathf.Clamp(pos.y, minY, maxY);
+		transform.position = pos;
 	}
 }
