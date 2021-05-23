@@ -48,7 +48,6 @@ public class Turret : MonoBehaviour
             target = null;
         }
     }
-    // Update is called once per frame
     void Update()
     {
         if(target == null)
