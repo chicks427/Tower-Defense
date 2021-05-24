@@ -51,7 +51,7 @@ MonoBehaviour:
   enemyTag: Enemy
   target: {fileID: 0}
   rotationPivot: {fileID: 5760080184777225456}
-  bulletPrefab: {fileID: 3339311939744527421, guid: b78498623fad4f876873592d3da07df7, type: 3}
+  bulletPrefab: {fileID: 7033550194519080137, guid: 0ccab1623cdfa0996b8868415acb4303, type: 3}
   firePoint: {fileID: 5090209584439426229}
 --- !u!1 &137326265547344213
 GameObject:
