@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour
 	private Transform target;
 
 	public float speed = 30;
+    public float explosionRadius = 0f;
 	public GameObject bulletImpactEffect;
 
     // Start is called before the first frame update
@@ -41,7 +42,38 @@ public class Bullet : MonoBehaviour
     	GameObject effectIns = (GameObject)Instantiate(bulletImpactEffect, transform.position, transform.rotation);
     	Destroy(effectIns, 2f);
 
+        if (explosionRadius > 0)
+        {
+            Explode();
+        }
+        else
+        {
+            Damage(target);
+        }
+
     	Destroy(gameObject);
-    	Destroy(target.gameObject);
+    }
+
+    void Damage(Transform enemy)
+    {
+        Destroy(enemy.gameObject);
+    }
+
+    void Explode()
+    {
+        Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadius);
+        foreach(Collider collider in colliders)
+        {
+            if (collider.tag == "Enemy")
+            {
+                Damage(collider.transform);
+            }
+        }
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, explosionRadius);
     }
 }
