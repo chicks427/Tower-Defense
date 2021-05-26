@@ -4175,6 +4175,7 @@ GameObject:
   - component: {fileID: 583933680}
   - component: {fileID: 583933679}
   - component: {fileID: 583933681}
+  - component: {fileID: 583933682}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -4226,6 +4227,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   standardTurretPrefab: {fileID: 3482357735315690108, guid: 090a6535d849d94068f88194c57a3c39, type: 3}
   missleLauncherPrefab: {fileID: 5185690422498882, guid: 7cd3d5dbceab46bd5887d2560433e314, type: 3}
+--- !u!114 &583933682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 583933678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 182843d925247f3328b6ed37addf6cf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startMoney: 400
 --- !u!1001 &585222110
 PrefabInstance:
   m_ObjectHideFlags: 0
