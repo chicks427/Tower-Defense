@@ -4014,7 +4014,7 @@ PrefabInstance:
       objectReference: {fileID: 1527446266}
     - target: {fileID: 4044887242490562757, guid: d0c19f81d838b16128e77cff0193d121, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PurchaseMissleLauncher
+      value: SelectMissleLauncher
       objectReference: {fileID: 0}
     - target: {fileID: 4044887242490562759, guid: d0c19f81d838b16128e77cff0193d121, type: 3}
       propertyPath: m_Pivot.x
@@ -7269,7 +7269,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.5735764, y: 0, z: 0, w: 0.8191521}
-  m_LocalPosition: {x: -9.7, y: 20, z: -20}
+  m_LocalPosition: {x: -9.7, y: 20, z: -19.22}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -10659,6 +10659,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ea4753b3aa217d57b0f08c95b871438, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  standardTurret:
+    prefab: {fileID: 3482357735315690108, guid: 090a6535d849d94068f88194c57a3c39, type: 3}
+    cost: 100
+  missleLauncher:
+    prefab: {fileID: 5185690422498882, guid: 7cd3d5dbceab46bd5887d2560433e314, type: 3}
+    cost: 250
 --- !u!114 &1527446267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12692,10 +12698,10 @@ RectTransform:
   m_Father: {fileID: 1374457880}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 124}
-  m_SizeDelta: {x: 379.7917, y: 106.927}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: -35.241837}
+  m_SizeDelta: {x: -492.2083, y: 70.9737}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1738750974
 MonoBehaviour:
@@ -16055,7 +16061,7 @@ PrefabInstance:
       objectReference: {fileID: 1527446266}
     - target: {fileID: 4044887242490562757, guid: d0c19f81d838b16128e77cff0193d121, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PurchaseStandardTurret
+      value: SelectStandardTurret
       objectReference: {fileID: 0}
     - target: {fileID: 4044887242490562759, guid: d0c19f81d838b16128e77cff0193d121, type: 3}
       propertyPath: m_Pivot.x
