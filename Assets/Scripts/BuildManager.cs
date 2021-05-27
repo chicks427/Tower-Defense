@@ -9,6 +9,7 @@ public class BuildManager : MonoBehaviour
 	public GameObject missleLauncherPrefab;
 
 	public bool CanBuild { get { return turretToBuild != null; } }
+	public bool CanAfford { get { return PlayerStats.Money >= turretToBuild.cost; } }
 
 	void Awake()
 	{
