@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
 	public float speed = 1f;
+    public int health = 100;
 
 	private Transform target;
 	private int waypointIndex = 0;
@@ -25,6 +26,21 @@ public class Enemy : MonoBehaviour
         {
         	GetNextWaypoint();
         }
+    }
+
+    public void TakeDamage(int amount)
+    {
+        health -= amount;
+
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        Destroy(gameObject);
     }
 
     void GetNextWaypoint()
