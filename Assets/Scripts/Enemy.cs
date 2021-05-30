@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
 {
 	public float speed = 1f;
     public int health = 100;
+    public int value = 50;
 
 	private Transform target;
 	private int waypointIndex = 0;
@@ -40,6 +41,7 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
+        PlayerStats.Money += value;
         Destroy(gameObject);
     }
 
