@@ -4,17 +4,23 @@ using UnityEngine;
 
 public class Turret : MonoBehaviour
 {
-    [Header("Attributes")]
+    [Header("General")]
 	public float range = 10;
     public float turnSpeed = 8;
+
+    [Header("Use bullets (default")]
+    public GameObject bulletPrefab;
     public float fireRate = 1f;
     private float fireCountdown = 0f;
+
+    [Header("Use laser")]
+    public bool useLaser = false;
+    public LineRenderer lineRenderer;
 
     [Header("Unity Setup Fields")]
     public string enemyTag = "Enemy";
     public Transform target;
     public Transform rotationPivot;
-    public GameObject bulletPrefab;
     public Transform firePoint;
 
     // Start is called before the first frame update
@@ -51,20 +57,47 @@ public class Turret : MonoBehaviour
     void Update()
     {
         if(target == null)
+        {
+            if(useLaser)
+            {
+                if(lineRenderer.enabled)
+                    lineRenderer.enabled = false;
+            }
         	return;
+        }
 
-        // Target lock-on
+        TargetLockOn();
+
+        if(useLaser)
+        {
+            Laser();
+        } 
+        else
+        {
+            if(fireCountdown <= 0f)
+            {
+                Shoot();
+                fireCountdown = 1f / fireRate;
+            }
+            fireCountdown -= Time.deltaTime;
+        }
+    }
+
+    void Laser()
+    {
+        if(!lineRenderer.enabled)
+            lineRenderer.enabled = true;
+
+        lineRenderer.SetPosition(0, firePoint.position);
+        lineRenderer.SetPosition(1, target.position);
+    }
+
+    void TargetLockOn()
+    {
         Vector3 dir = target.position - transform.position;
         Quaternion lookRotation = Quaternion.LookRotation(dir);
         Vector3 rotation = Quaternion.Lerp(rotationPivot.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
         rotationPivot.rotation = Quaternion.Euler(0f, rotation.y, 0f);
-
-        if(fireCountdown <= 0f)
-        {
-            Shoot();
-            fireCountdown = 1f / fireRate;
-        }
-        fireCountdown -= Time.deltaTime;
     }
 
     void Shoot()
