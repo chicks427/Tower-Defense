@@ -16,6 +16,7 @@ public class Turret : MonoBehaviour
     [Header("Use laser")]
     public bool useLaser = false;
     public LineRenderer lineRenderer;
+    public ParticleSystem impactEffect;
 
     [Header("Unity Setup Fields")]
     public string enemyTag = "Enemy";
@@ -61,7 +62,10 @@ public class Turret : MonoBehaviour
             if(useLaser)
             {
                 if(lineRenderer.enabled)
+                {
                     lineRenderer.enabled = false;
+                    impactEffect.Stop();
+                }
             }
         	return;
         }
@@ -86,10 +90,15 @@ public class Turret : MonoBehaviour
     void Laser()
     {
         if(!lineRenderer.enabled)
+        {
+            impactEffect.Play();
             lineRenderer.enabled = true;
+        }
 
         lineRenderer.SetPosition(0, firePoint.position);
         lineRenderer.SetPosition(1, target.position);
+
+        impactEffect.transform.position = target.position;
     }
 
     void TargetLockOn()
