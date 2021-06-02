@@ -98,7 +98,10 @@ public class Turret : MonoBehaviour
         lineRenderer.SetPosition(0, firePoint.position);
         lineRenderer.SetPosition(1, target.position);
 
-        impactEffect.transform.position = target.position;
+        Vector3 dir = firePoint.position - target.position;
+        impactEffect.transform.position = target.position + dir.normalized * .5f;
+
+        impactEffect.transform.rotation = Quaternion.LookRotation(dir);
     }
 
     void TargetLockOn()
