@@ -19,6 +19,7 @@ public class Turret : MonoBehaviour
     public ParticleSystem impactEffect;
     public Light impactLight;
     public int damageOverTime = 30;
+    public float slowAmount = 0.3f;
 
     [Header("Unity Setup Fields")]
     public string enemyTag = "Enemy";
@@ -95,6 +96,7 @@ public class Turret : MonoBehaviour
     void Laser()
     {
         targetEnemy.TakeDamage(damageOverTime * Time.deltaTime);
+        targetEnemy.Slow(slowAmount);
         if(!lineRenderer.enabled)
         {
             impactEffect.Play();
