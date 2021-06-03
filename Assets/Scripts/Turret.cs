@@ -18,10 +18,12 @@ public class Turret : MonoBehaviour
     public LineRenderer lineRenderer;
     public ParticleSystem impactEffect;
     public Light impactLight;
+    public int damageOverTime = 30;
 
     [Header("Unity Setup Fields")]
     public string enemyTag = "Enemy";
     public Transform target;
+    private Enemy targetEnemy;
     public Transform rotationPivot;
     public Transform firePoint;
 
@@ -50,6 +52,7 @@ public class Turret : MonoBehaviour
     	if (nearestEnemy != null && shortestDistance <= range)
     	{
     		target = nearestEnemy.transform;
+            targetEnemy = nearestEnemy.GetComponent<Enemy>();
     	}
         else
         {
@@ -91,6 +94,7 @@ public class Turret : MonoBehaviour
 
     void Laser()
     {
+        targetEnemy.TakeDamage(damageOverTime * Time.deltaTime);
         if(!lineRenderer.enabled)
         {
             impactEffect.Play();

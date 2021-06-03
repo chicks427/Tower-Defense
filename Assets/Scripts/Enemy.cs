@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
 	public float speed = 1f;
-    public int health = 100;
+    public float health = 100;
     public int value = 50;
     public GameObject deathEffect;
 
@@ -30,7 +30,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int amount)
+    public void TakeDamage(float amount)
     {
         health -= amount;
 

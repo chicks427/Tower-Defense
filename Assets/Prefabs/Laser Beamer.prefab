@@ -180,6 +180,7 @@ MonoBehaviour:
   lineRenderer: {fileID: 2046570527}
   impactEffect: {fileID: 1771387623502754198}
   impactLight: {fileID: 1159187953}
+  damageOverTime: 30
   enemyTag: Enemy
   target: {fileID: 0}
   rotationPivot: {fileID: 2862493554314853075}
