@@ -5,11 +5,12 @@ public class BuildManager : MonoBehaviour
 	public static BuildManager instance;
 
 	private TurretBlueprint turretToBuild;
+	private Node selectedNode;
 	public GameObject standardTurretPrefab;
 	public GameObject missleLauncherPrefab;
 	public GameObject buildEffect;
 
-	public bool CanBuild { get { return turretToBuild != null; } }
+	public bool TurretSelected { get { return turretToBuild != null; } }
 	public bool CanAfford { get { return PlayerStats.Money >= turretToBuild.cost; } }
 
 	void Awake()
@@ -22,7 +23,7 @@ public class BuildManager : MonoBehaviour
 		instance = this;
 	}
 
-	public void buildTurretOn(Node node)
+	public void BuildTurretOn(Node node)
 	{
 		if (PlayerStats.Money < turretToBuild.cost)
 		{
@@ -43,5 +44,24 @@ public class BuildManager : MonoBehaviour
 	public void SelectTurretToBuild(TurretBlueprint turret)
 	{
 		turretToBuild = turret;
+		selectedNode = null;
+	}
+
+	public void SelectNode(Node node)
+	{
+		selectedNode = node;
+		turretToBuild = null;
+		Debug.Log("Entered SelectNode. turretToBuild is now: " + turretToBuild);
+	}
+
+	public void LogInfo()
+	{
+		//turretToBuild = null;
+		Debug.Log("turretToBuild is currently" + turretToBuild);
+	}
+
+	public TurretBlueprint GetTurretToBuild()
+	{
+		return turretToBuild;
 	}
 }

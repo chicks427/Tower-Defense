@@ -25,20 +25,21 @@ public class Node : MonoBehaviour
 	{
 		if (EventSystem.current.IsPointerOverGameObject())
 			return;
-			
-		if (!buildManager.CanBuild)
-			return;
 
 		if (turret!=null)
 		{
-			Debug.Log("Can't build there!");
+			buildManager.SelectNode(this);
+			return;
 		}
-		else
+
+		if (!buildManager.TurretSelected)
 		{
-			buildManager.buildTurretOn(this);
-			//GameObject turretToBuild = buildManager.GetTurretToBuild();
-			//sturret = (GameObject)Instantiate(turretToBuild, transform.position + positionOffset, transform.rotation);
+			Debug.Log("There is no turret currently selected");
+			return;
 		}
+
+		buildManager.BuildTurretOn(this);
+
 	}
 
 	void OnMouseEnter()
@@ -46,8 +47,10 @@ public class Node : MonoBehaviour
 		if (EventSystem.current.IsPointerOverGameObject())
 			return;
 
-		if (!buildManager.CanBuild)
+		if (!buildManager.TurretSelected)
+		{
 			return;
+		}
 
 		if (buildManager.CanAfford)
 		{
