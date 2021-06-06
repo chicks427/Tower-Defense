@@ -9,6 +9,7 @@ public class BuildManager : MonoBehaviour
 	public GameObject standardTurretPrefab;
 	public GameObject missleLauncherPrefab;
 	public GameObject buildEffect;
+	public NodeUI nodeUI;
 
 	public bool TurretSelected { get { return turretToBuild != null; } }
 	public bool CanAfford { get { return PlayerStats.Money >= turretToBuild.cost; } }
@@ -51,7 +52,8 @@ public class BuildManager : MonoBehaviour
 	{
 		selectedNode = node;
 		turretToBuild = null;
-		Debug.Log("Entered SelectNode. turretToBuild is now: " + turretToBuild);
+		
+		nodeUI.SetTarget(node);
 	}
 
 	public void LogInfo()

@@ -4772,6 +4772,7 @@ MonoBehaviour:
   standardTurretPrefab: {fileID: 3482357735315690108, guid: 090a6535d849d94068f88194c57a3c39, type: 3}
   missleLauncherPrefab: {fileID: 5185690422498882, guid: 7cd3d5dbceab46bd5887d2560433e314, type: 3}
   buildEffect: {fileID: 649109926609661936, guid: df1579d459cba148e9c880e13e1fcfc9, type: 3}
+  nodeUI: {fileID: 1771157420}
 --- !u!114 &583933682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15034,6 +15035,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1771157419}
+  - component: {fileID: 1771157420}
   m_Layer: 0
   m_Name: NodeUI
   m_TagString: Untagged
@@ -15056,6 +15058,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1771157420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1771157418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e1f6fb47c451fe89bfffccc544d0786, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ui: {fileID: 1771157418}
 --- !u!1001 &1772450440
 PrefabInstance:
   m_ObjectHideFlags: 0
