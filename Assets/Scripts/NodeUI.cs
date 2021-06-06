@@ -13,6 +13,7 @@ public class NodeUI : MonoBehaviour
 		target = _target;
 		transform.position = _target.GetBuildPosition();
 
+		ui.SetActive(true);
 	}
 
 	public void Hide()
