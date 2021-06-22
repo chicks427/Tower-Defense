@@ -92,6 +92,17 @@ public class Node : MonoBehaviour
 		Debug.Log("Turret purchased");
 	}
 
+	public void SellTurret()
+	{
+		PlayerStats.Money += turretBlueprint.GetSellAmount(isUpgraded);
+
+		Destroy(turret);
+		turretBlueprint = null;
+		isUpgraded = false;
+
+		// Spawn an effect??
+	}
+
 	void OnMouseEnter()
 	{
 		if (EventSystem.current.IsPointerOverGameObject())
