@@ -96,11 +96,12 @@ public class Node : MonoBehaviour
 	{
 		PlayerStats.Money += turretBlueprint.GetSellAmount(isUpgraded);
 
+		GameObject effect = (GameObject)Instantiate(buildManager.sellEffect, GetBuildPosition(), Quaternion.identity);
+		Destroy(effect, 5f);
+
 		Destroy(turret);
 		turretBlueprint = null;
 		isUpgraded = false;
-
-		// Spawn an effect??
 	}
 
 	void OnMouseEnter()

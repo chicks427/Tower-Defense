@@ -9,6 +9,7 @@ public class BuildManager : MonoBehaviour
 	public GameObject standardTurretPrefab;
 	public GameObject missleLauncherPrefab;
 	public GameObject buildEffect;
+	public GameObject sellEffect;
 	public NodeUI nodeUI;
 
 	public bool TurretSelected { get { return turretToBuild != null; } }

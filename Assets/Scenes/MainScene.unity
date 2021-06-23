@@ -4884,6 +4884,7 @@ MonoBehaviour:
   standardTurretPrefab: {fileID: 3482357735315690108, guid: 090a6535d849d94068f88194c57a3c39, type: 3}
   missleLauncherPrefab: {fileID: 5185690422498882, guid: 7cd3d5dbceab46bd5887d2560433e314, type: 3}
   buildEffect: {fileID: 649109926609661936, guid: df1579d459cba148e9c880e13e1fcfc9, type: 3}
+  sellEffect: {fileID: 649109926609661936, guid: 6c5aabfb96c60333a8ed32c766b1c388, type: 3}
   nodeUI: {fileID: 1771157420}
 --- !u!114 &583933682
 MonoBehaviour:
@@ -6061,7 +6062,7 @@ GameObject:
   - component: {fileID: 719554372}
   - component: {fileID: 719554371}
   m_Layer: 0
-  m_Name: Cost
+  m_Name: Amount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11774,7 +11775,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1341627211}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1771157420}
+        m_TargetAssemblyTypeName: NodeUI, Assembly-CSharp
+        m_MethodName: Sell
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1341627211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15283,6 +15296,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ui: {fileID: 17812382}
   upgradeCost: {fileID: 84260723}
+  sellAmount: {fileID: 719554371}
   upgradeButton: {fileID: 1218038763}
 --- !u!1001 &1772450440
 PrefabInstance:
