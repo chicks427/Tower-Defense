@@ -5154,6 +5154,10 @@ MonoBehaviour:
   timeBetweenWaves: 10
   spawnPoint: {fileID: 1530365284}
   waveCountdown: {fileID: 1192410944}
+  waves:
+  - enemy: {fileID: 0}
+    count: 0
+    rate: 0
 --- !u!4 &583933680
 Transform:
   m_ObjectHideFlags: 0
@@ -5225,6 +5229,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ui: {fileID: 1078214425}
+  sceneFader: {fileID: 759842982}
+  mainMenuName: MainMenu
 --- !u!1001 &585222110
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6696,6 +6702,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7157789229077865924, guid: aed65e20845a40452aef36aabe080f68, type: 3}
   m_PrefabInstance: {fileID: 744287609}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &759842982 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4793544294653491700, guid: eb1f5816065bca0d385baaefdee41aef, type: 3}
+  m_PrefabInstance: {fileID: 4793544296600738602}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd7277e80768374699df94ab222056b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &759933019
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13071,6 +13088,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roundsText: {fileID: 820309981}
+  sceneFader: {fileID: 759842982}
+  mainMenuName: MainMenu
 --- !u!95 &1421422183
 Animator:
   serializedVersion: 3
