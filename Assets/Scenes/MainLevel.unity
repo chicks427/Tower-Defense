@@ -5151,13 +5151,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 2813568180317956083, guid: 9d2335ee75a596fb0a1f93e734d99ab8, type: 3}
-  timeBetweenWaves: 10
+  timeBetweenWaves: 3
   spawnPoint: {fileID: 1530365284}
   waveCountdown: {fileID: 1192410944}
   waves:
-  - enemy: {fileID: 0}
-    count: 0
-    rate: 0
+  - enemy: {fileID: 4878505136990719875, guid: 6d07abacc5f75b73e901fd89106021ca, type: 3}
+    count: 5
+    rate: 3
+  - enemy: {fileID: 4878505136990719875, guid: 3198896a0e1b2ac4ab402861c568efb6, type: 3}
+    count: 2
+    rate: 1
 --- !u!4 &583933680
 Transform:
   m_ObjectHideFlags: 0
