@@ -11,11 +11,13 @@ public class Enemy : MonoBehaviour
     public int value = 50;
     public GameObject deathEffect;
     public Image healthBar;
+    private bool alive;
 
     void Start()
     {
         speed = startSpeed;
         health = startHealth;
+        alive = true;
     }
 
     public void TakeDamage(float amount)
@@ -31,6 +33,15 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
+        if (!alive)
+        {
+            // Lasers invoke TakeDamage every frame. If things
+            // happen too quickly, an enemy can end up calling
+            // Die() multiple times, giving extra money/messing 
+            // up EnemiesAlive. This prevents that.
+            return;
+        }
+
         PlayerStats.Money += value;
 
         GameObject effect = (GameObject)Instantiate(deathEffect, transform.position, Quaternion.identity);
@@ -41,6 +52,8 @@ public class Enemy : MonoBehaviour
         Debug.Log(WaveSpawner.EnemiesAlive);
 
         Destroy(gameObject);
+
+        alive = false;
     }
 
     public void Slow(float pct)
