@@ -5161,6 +5161,7 @@ MonoBehaviour:
   - enemy: {fileID: 4878505136990719875, guid: 3198896a0e1b2ac4ab402861c568efb6, type: 3}
     count: 2
     rate: 1
+  gameManager: {fileID: 583933683}
 --- !u!4 &583933680
 Transform:
   m_ObjectHideFlags: 0
@@ -5219,6 +5220,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverUI: {fileID: 1421422180}
+  nextLevel: Level02
+  levelToUnlock: 2
+  sceneFader: {fileID: 759842982}
 --- !u!114 &583933684
 MonoBehaviour:
   m_ObjectHideFlags: 0
