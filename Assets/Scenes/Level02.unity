@@ -3355,7 +3355,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26924ae4706964f8fab4884ac7d2b54a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roundsText: {fileID: 1298389663}
   sceneFader: {fileID: 759842982}
   mainMenuName: MainMenu
 --- !u!95 &287918249
@@ -7683,6 +7682,7 @@ GameObject:
   - component: {fileID: 820309982}
   - component: {fileID: 820309981}
   - component: {fileID: 820309980}
+  - component: {fileID: 820309983}
   m_Layer: 5
   m_Name: NumberOfRounds
   m_TagString: Untagged
@@ -7766,6 +7766,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 820309978}
   m_CullTransparentMesh: 1
+--- !u!114 &820309983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 820309978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4694e4b5dd55d78828f662671ce90cc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roundsText: {fileID: 820309981}
 --- !u!1 &821105527
 GameObject:
   m_ObjectHideFlags: 0
@@ -12588,6 +12601,7 @@ GameObject:
   - component: {fileID: 1298389665}
   - component: {fileID: 1298389663}
   - component: {fileID: 1298389664}
+  - component: {fileID: 1298389667}
   m_Layer: 5
   m_Name: NumberOfRounds
   m_TagString: Untagged
@@ -12671,6 +12685,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 95}
   m_SizeDelta: {x: 1352.027, y: 186.1512}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1298389667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1298389662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4694e4b5dd55d78828f662671ce90cc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roundsText: {fileID: 1298389663}
 --- !u!1001 &1303641683
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13928,7 +13955,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26924ae4706964f8fab4884ac7d2b54a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roundsText: {fileID: 820309981}
   sceneFader: {fileID: 759842982}
   mainMenuName: MainMenu
 --- !u!95 &1421422183
